@@ -1,26 +1,26 @@
-/* ===========================
+/* ======================================================
    ACasa Pila
-=========================== */
+   Welcome Book
+====================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root{
 
 --green:#355C49;
---green2:#4F7A63;
---cream:#F6F4EF;
+--green-dark:#234234;
+--green-light:#7EA487;
+--cream:#F7F5F1;
 --white:#FFFFFF;
 --text:#2E2E2E;
---border:#E7E4DE;
+--shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 }
 
 body{
@@ -31,31 +31,52 @@ background:var(--cream);
 
 color:var(--text);
 
-line-height:1.7;
+line-height:1.6;
 
 }
 
-/* HEADER */
+/* ===========================
+HEADER
+=========================== */
 
 header{
 
-background:linear-gradient(135deg,var(--green),var(--green2));
+background:linear-gradient(
+135deg,
+#234234 0%,
+#3f6f56 55%,
+#8cab8c 100%
+);
 
-padding:35px;
+padding:28px;
 
 text-align:center;
 
-box-shadow:0 3px 12px rgba(0,0,0,.15);
+box-shadow:0 4px 15px rgba(0,0,0,.15);
 
 }
 
+/* ===========================
+LOGO
+=========================== */
+
 .logo{
 
-width:230px;
+width:220px;
 
-max-width:80%;
+height:220px;
 
-transition:.25s;
+object-fit:cover;
+
+background:white;
+
+padding:8px;
+
+border-radius:50%;
+
+box-shadow:0 10px 28px rgba(0,0,0,.20);
+
+transition:.30s;
 
 }
 
@@ -65,7 +86,9 @@ transform:scale(1.03);
 
 }
 
-/* MENU */
+/* ===========================
+MENU
+=========================== */
 
 nav{
 
@@ -77,17 +100,17 @@ justify-content:center;
 
 flex-wrap:wrap;
 
-gap:25px;
+gap:12px;
 
-padding:18px;
+padding:15px;
 
 position:sticky;
 
 top:0;
 
-z-index:999;
+z-index:100;
 
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+box-shadow:0 2px 10px rgba(0,0,0,.08);
 
 }
 
@@ -95,13 +118,15 @@ nav a{
 
 text-decoration:none;
 
-color:var(--green);
+color:var(--green-dark);
 
 font-weight:600;
 
 font-size:15px;
 
-transition:.2s;
+padding:10px 18px;
+
+border-radius:30px;
 
 display:flex;
 
@@ -109,15 +134,29 @@ align-items:center;
 
 gap:8px;
 
+transition:.25s;
+
 }
 
 nav a:hover{
 
-color:#000;
+background:#EAF2EC;
 
 }
 
-/* PAGINA */
+/* pagina attiva */
+
+nav a.active{
+
+background:var(--green-dark);
+
+color:white;
+
+}
+
+/* ===========================
+CONTENUTO
+=========================== */
 
 main{
 
@@ -125,23 +164,25 @@ max-width:1100px;
 
 margin:auto;
 
-padding:40px 20px;
+padding:35px 20px 60px;
 
 }
 
-/* HERO */
+/* ===========================
+BENVENUTO
+=========================== */
 
 .hero{
 
 background:white;
 
-padding:45px;
+padding:35px;
 
-border-radius:20px;
+border-radius:22px;
+
+box-shadow:var(--shadow);
 
 text-align:center;
-
-box-shadow:0 5px 15px rgba(0,0,0,.06);
 
 margin-bottom:35px;
 
@@ -149,49 +190,85 @@ margin-bottom:35px;
 
 .hero h2{
 
-color:var(--green);
-
 font-size:34px;
 
-margin-bottom:15px;
+color:var(--green-dark);
 
-font-weight:700;
+margin-bottom:8px;
 
 }
 
-/* CARD */
+.hero p{
+
+max-width:650px;
+
+margin:auto;
+
+}
+
+/* ===========================
+GRIGLIA
+=========================== */
 
 .cards{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
 gap:22px;
 
 }
 
+/* ===========================
+CARD
+=========================== */
+
 .card{
 
 background:white;
 
-padding:28px;
+border-radius:20px;
 
-border-radius:18px;
+padding:35px 25px;
 
-box-shadow:0 4px 12px rgba(0,0,0,.05);
+box-shadow:var(--shadow);
 
-border:1px solid var(--border);
+text-align:center;
+
+transition:.30s;
+
+color:inherit;
+
+text-decoration:none;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.card i{
+
+font-size:48px;
+
+color:var(--green);
+
+margin-bottom:20px;
 
 }
 
 .card h3{
 
-margin-bottom:15px;
+margin-bottom:10px;
 
-color:var(--green);
+color:var(--green-dark);
 
-font-size:20px;
+font-size:21px;
 
 }
 
@@ -201,77 +278,129 @@ font-size:15px;
 
 }
 
-/* BUTTON */
+/* elimina link blu */
+
+.cards a{
+
+color:inherit;
+
+text-decoration:none;
+
+}
+
+/* ===========================
+PULSANTI
+=========================== */
 
 .button{
 
 display:inline-block;
 
-background:var(--green);
+margin-top:18px;
+
+background:linear-gradient(
+135deg,
+#2f5344,
+#4f7a63
+);
 
 color:white;
 
-padding:14px 26px;
+padding:12px 24px;
 
-border-radius:10px;
+border-radius:12px;
 
 text-decoration:none;
 
-margin-top:20px;
-
 font-weight:600;
+
+transition:.25s;
+
+border:none;
+
+cursor:pointer;
 
 }
 
 .button:hover{
 
-background:var(--green2);
+transform:translateY(-2px);
 
 }
 
-/* FOOTER */
+/* ===========================
+FOOTER
+=========================== */
 
 footer{
 
-margin-top:70px;
+margin-top:60px;
 
-background:linear-gradient(135deg,var(--green),var(--green2));
+background:linear-gradient(
+135deg,
+#234234,
+#3f6f56
+);
 
 color:white;
 
-padding:30px;
-
 text-align:center;
 
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-.logo{
-
-width:180px;
-
-}
-
-nav{
-
-gap:14px;
+padding:25px;
 
 font-size:14px;
 
 }
 
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:700px){
+
+.logo{
+
+width:170px;
+
+height:170px;
+
+}
+
 .hero{
 
-padding:30px;
+padding:25px;
 
 }
 
 .hero h2{
 
 font-size:28px;
+
+}
+
+nav{
+
+gap:8px;
+
+}
+
+nav a{
+
+font-size:14px;
+
+padding:8px 12px;
+
+}
+
+.card{
+
+padding:28px 20px;
+
+}
+
+.card i{
+
+font-size:42px;
 
 }
 
