@@ -58,9 +58,9 @@ header{
 
 background:linear-gradient(
 135deg,
-#234234 100%,
+#234234 0%,
 #3f6f56 55%,
-#8cab8c 0%
+#8cab8c 100%
 );
 
 padding:28px;
