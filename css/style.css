@@ -46,9 +46,6 @@ line-height:1.6;
 
 }
 
-/* ===========================
-HEADER
-=========================== */
 
 /* ===========================
 HEADER
@@ -178,6 +175,20 @@ nav a.active{
 background:var(--green-dark);
 
 color:white;
+
+}
+
+nav a.active i{
+
+color:white;
+
+}
+
+nav a i{
+
+width:18px;
+
+text-align:center;
 
 }
 
